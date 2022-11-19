@@ -1,14 +1,20 @@
+import { FC } from "react";
 import "./ExpenseItem.css";
+import { ExpenseDate } from "./ExpenseDate";
 
-function ExpenseItem() {
-  return (
-    <div className="expense-item">
-      <div>19.11.2022</div>
-      <div className="expense-item__description">
-        <h2>Exciting Title</h2>
-        <div className="expense-item__price">250 CZK</div>
-      </div>
-    </div>
-  );
+interface Props {
+  readonly id: string;
+  readonly date: Date;
+  readonly title: string;
+  readonly amount: number;
 }
-export default ExpenseItem;
+
+export const ExpenseItem: FC<Props> = ({ id, date, title, amount }) => (
+  <div className="expense-item">
+    <ExpenseDate date={date} />
+    <div className="expense-item__description">
+      <h2>{title}</h2>
+      <div className="expense-item__price">{amount} CZK</div>
+    </div>
+  </div>
+);
