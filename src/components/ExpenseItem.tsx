@@ -3,13 +3,12 @@ import "./ExpenseItem.css";
 import { ExpenseDate } from "./ExpenseDate";
 
 export interface IExpenseItem {
-  readonly id: string;
   readonly date: Date;
   readonly title: string;
   readonly amount: number;
 }
 
-export const ExpenseItem: FC<IExpenseItem> = ({ id, date, title, amount }) => (
+export const ExpenseItem: FC<IExpenseItem> = ({ date, title, amount }) => (
   <div className="expense-item">
     <ExpenseDate date={date} />
     <div className="expense-item__description">

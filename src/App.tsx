@@ -31,7 +31,6 @@ const expenses = [
 export const App: FC = () => (
   <div className="App">
     <h1>THE EXPEN DEER</h1>
-    <p>And you are just a monke.</p>
     <Expenses expenses={expenses} />
   </div>
 );
